@@ -1,0 +1,78 @@
+.stage {
+  width: 20rem;
+  display: flex;
+  height: 43.25rem;
+  flex-direction: column;
+  overflow: scroll;
+  padding-bottom: 1.5rem;
+  align-items: center;
+  border: 1px solid #dce1e4;
+}
+
+.stageHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.3125rem;
+  position: absolute;
+  width: inherit;
+  z-index: 100;
+  height: 3rem;
+  background: #fff;
+}
+
+.stageCount {
+  height: 1.5rem;
+  justify-content: center;
+  margin-right: 0.625rem;
+  margin-left: 0.75rem;
+  width: 1.5rem;
+  align-items: center;
+  background: #d8d8d8;
+  border-radius: 4px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  display: flex;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #5b5b5b;
+}
+
+.stageTitle {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 16px;
+  color: #454444;
+}
+
+.stageGroup {
+  display: flex;
+  width: max-content;
+}
+
+.cardsGroup {
+  margin-top: 4.6rem;
+}
+
+.requestedCount {
+  background: #d8d8d8;
+}
+
+.editRequestedCount {
+  background: #ffccd3;
+}
+
+.inRevisionCount {
+  background: #fbedce;
+}
+
+.pendingApprovalCount {
+  background: #d1e4f9;
+}
+
+.pendingImplementationCount {
+  background: #fedfd0;
+}

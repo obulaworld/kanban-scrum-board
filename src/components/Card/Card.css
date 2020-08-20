@@ -1,0 +1,53 @@
+hr {
+  height: 1px;
+  background-color: #f2f2f2;
+  border: none;
+}
+
+.Card {
+  padding: 1.125rem 0.75rem;
+  width: 18.4375rem;
+  background: #ffffff;
+  border: 1px solid #d7d6d6;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.105004);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.cardTitle {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color: #3f3939;
+  margin-bottom: 0.375rem;
+  margin-top: 0;
+}
+
+.cardText {
+  margin-top: 0;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #3f3939;
+}
+
+.bottomCard {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardAssignee {
+    margin-right: 1rem;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    background: #ddd;
+    align-items: center;
+    border-radius: 50%;
+}
