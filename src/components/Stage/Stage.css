@@ -50,7 +50,7 @@
 
 .stageGroup {
   display: flex;
-  width: max-content;
+  padding: 0 2rem;
 }
 
 .cardsGroup {

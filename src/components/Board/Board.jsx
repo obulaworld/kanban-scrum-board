@@ -7,7 +7,11 @@ import { array_move, array_insert } from '../../utils/utils';
 import './Board.css';
 
 function Board() {
-  const [board, setBoard] = useState(stageMockData);
+    const [board, setBoard] = useState({...stageMockData });
+    
+    const setNewBoard = useCallback((board) => {
+        setBoard({ ...board });
+    }, [setBoard]);
 
   const onDragEnd = useCallback(
     (event) => {
@@ -66,7 +70,7 @@ function Board() {
 
   return (
     <div className='Board'>
-      <ToolBar />
+      <ToolBar board={stageMockData} setNewBoard={setNewBoard} />
       <DragDropContext onDragEnd={onDragEnd}>
         <div className='stageGroup'>
           {board.stages.map((stage, index) => {
