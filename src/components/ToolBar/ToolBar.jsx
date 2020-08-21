@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ToggleLayer } from 'react-laag';
 import _ from 'lodash';
 import { filters, stageMockData } from '../../__mock_data/StageMockData';
@@ -15,6 +15,12 @@ function ToolBar(props) {
   const [searchBackground, setSearchBackground] = useState(false);
   const [filterArray, setFilterArray] = useState([]);
 
+  const addEventListener = () => {
+    window.addEventListener('click', resetBackgrounds);
+  }
+
+  useEffect(() => window.addEventListener('click', resetBackgrounds), [])
+
   const setFilters = (e, currentFilter, setNewBoard) => {
     e.preventDefault();
 
@@ -26,6 +32,14 @@ function ToolBar(props) {
     }
     setFilterArray([...finalFilters]);
     checkFilter(setNewBoard, finalFilters);
+  };
+
+  const resetBackgrounds = (e) => {
+    console.log('am here')
+    e.preventDefault();
+    setFilterBackground(false);
+    setSearchBackground(false);
+    window.removeEventListener('click', resetBackgrounds);
   };
 
   const checkFilter = (setNewBoard, finalFilters) => {
@@ -117,6 +131,7 @@ function ToolBar(props) {
                 onClick={() => {
                   setFilterBackground(!filterBackground);
                   toggle();
+                  addEventListener();
                 }}>
                 <img
                   src={filterIcon}
@@ -167,6 +182,7 @@ function ToolBar(props) {
                 onClick={() => {
                   setSearchBackground(!searchBackground);
                   toggle();
+                  addEventListener();
                 }}>
                 <img
                   src={searchIcon}

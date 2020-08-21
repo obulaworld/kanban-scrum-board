@@ -15,7 +15,7 @@ export const stageMockData = {
         },
         {
           id: 2,
-          title: 'Flow Meter Measurement Errors',
+          title: 'Flow Meter M Errors',
           description: 'https://blog.gesrepair.com/',
           tag: 'Longform',
           dueDate: '09/15/2019',
@@ -23,7 +23,7 @@ export const stageMockData = {
         },
         {
           id: 3,
-          title: 'Flow Meter Measurement Errors',
+          title: 'F Meter Measurement Errors',
           description: 'https://blog.gesrepair.com/',
           tag: 'Longform',
           dueDate: '09/15/2019',
