@@ -53,6 +53,11 @@
 .ellipsis {
     margin-right: 1rem;
     cursor: pointer;
+    z-index: 200000000;
+}
+
+.ellipsis:hover {
+    background: #f3f3f3;
 }
 
 div.firstListItem {
@@ -65,10 +70,6 @@ div.firstListItem {
   color: #b1b4b6;
   display: flex;
   justify-content: center;
-}
-
-.ellipsisBackground {
-  background: #f3f3f3;
 }
 
 .ellipsisToolTip {

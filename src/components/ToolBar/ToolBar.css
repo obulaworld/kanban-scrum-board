@@ -25,6 +25,11 @@
 }
 
 .tools:hover {
+  background: #f3f3f3;
+  border-radius: 2px;
+}
+
+.tools:hover {
   cursor: pointer;
 }
 
@@ -34,12 +39,6 @@
 
 .icon {
   margin-right: 0.47rem;
-}
-
-.filterBackground,
-.searchBackground {
-  background: #f3f3f3;
-  border-radius: 2px;
 }
 
 .filterToolTip {

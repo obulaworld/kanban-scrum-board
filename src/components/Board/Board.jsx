@@ -21,9 +21,11 @@ function Board() {
 
   const setIds = (cardId) => {
     const getIds = [...selectedIds];
-    console.log('getIds', getIds);
     if (selectedIds.includes(cardId)) {
-      const newIds = getIds.filter((id) => id !== cardId);
+        const newIds = getIds.filter((id) => id !== cardId);
+        if (!newIds.length) {
+            setCurrentStage('');
+        }
       setSelectedIds(newIds);
     } else {
       getIds.push(cardId);
@@ -105,7 +107,6 @@ function Board() {
 
   const onDragEnd = useCallback(
     (event) => {
-      console.log(selectedIds);
       if (selectedIds.length > 1) {
         multiDrag(event);
         return;

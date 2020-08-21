@@ -1,10 +1,6 @@
 import React from 'react';
-import { ToggleLayer } from 'react-laag';
 import cardTypeIcon from '../../assets/cardTypeIcon.svg';
 import dateIcon from '../../assets/dateIcon.svg';
-import ellipsis from '../../assets/ellipsis.svg';
-import mark from '../../assets/mark.svg';
-import star from '../../assets/star.svg';
 import './Card.css';
 
 function Card(props) {
@@ -18,8 +14,6 @@ function Card(props) {
     id,
     onClick,
     snapshot,
-    ellipsisBackground,
-    setEllipsisBackground,
   } = props;
   const selectionCount = selectedIds.length;
   const shouldShowSelection = snapshot.isDragging && selectionCount > 1;
@@ -34,57 +28,6 @@ function Card(props) {
         <h3 className='cardTitle'>{title}</h3>
         {shouldShowSelection ? (
           <span className='selectionCount'>{selectionCount}</span>
-        ) : (
-          ''
-        )}
-        {!shouldShowSelection && selectedIds.includes(id) ? (
-          <ToggleLayer
-            closeOnOutsideClick
-            renderLayer={({ isOpen, layerProps }) =>
-              isOpen && (
-                <div
-                  ref={layerProps.ref}
-                  className='ellipsisToolTip'
-                  style={{
-                    ...layerProps.style,
-                  }}>
-                  <div className='approvalMenu firstListItem'>
-                    {selectedIds.length} Items Selected
-                  </div>
-                  <hr />
-                  <div className='approvalMenu'>
-                    <img className='icon' src={mark} alt='mark icon' />
-                    Approve
-                  </div>
-                  <hr />
-                  <div className='approvalMenu'>
-                    <img className='icon' src={star} alt='star icon' />
-                    Rate
-                  </div>
-                </div>
-              )
-            }
-            placement={{
-              autoAdjust: true,
-              anchor: 'BOTTOM_LEFT',
-              triggerOffset: 5,
-            }}>
-            {({ triggerRef, toggle }) => (
-              <div
-                className={`ellipsis iconContainer ${
-                  ellipsisBackground ? 'ellipsisBackground' : ''
-                }`}
-                ref={triggerRef}
-                onClick={() => {
-                  setEllipsisBackground(!ellipsisBackground);
-                  toggle();
-                }}>
-                <span className='ellipsisContainer'>
-                  <img src={ellipsis} alt="ellipsis icon"/>
-                </span>
-              </div>
-            )}
-          </ToggleLayer>
         ) : (
           ''
         )}

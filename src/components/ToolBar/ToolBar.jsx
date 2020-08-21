@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ToggleLayer } from 'react-laag';
 import _ from 'lodash';
 import { filters, stageMockData } from '../../__mock_data/StageMockData';
@@ -11,15 +11,7 @@ import './ToolBar.css';
 
 function ToolBar(props) {
   const { setNewBoard } = props;
-  const [filterBackground, setFilterBackground] = useState(false);
-  const [searchBackground, setSearchBackground] = useState(false);
   const [filterArray, setFilterArray] = useState([]);
-
-  const addEventListener = () => {
-    window.addEventListener('click', resetBackgrounds);
-  }
-
-  useEffect(() => window.addEventListener('click', resetBackgrounds), [])
 
   const setFilters = (e, currentFilter, setNewBoard) => {
     e.preventDefault();
@@ -32,14 +24,6 @@ function ToolBar(props) {
     }
     setFilterArray([...finalFilters]);
     checkFilter(setNewBoard, finalFilters);
-  };
-
-  const resetBackgrounds = (e) => {
-    console.log('am here')
-    e.preventDefault();
-    setFilterBackground(false);
-    setSearchBackground(false);
-    window.removeEventListener('click', resetBackgrounds);
   };
 
   const checkFilter = (setNewBoard, finalFilters) => {
@@ -71,7 +55,7 @@ function ToolBar(props) {
       setNewBoard(newBoard);
     }
   };
- 
+
   return (
     <div className='board'>
       <div className='boardHeader'>
@@ -124,14 +108,10 @@ function ToolBar(props) {
             }}>
             {({ triggerRef, toggle }) => (
               <div
-                className={`tools iconContainer ${
-                  filterBackground ? 'filterBackground' : ''
-                }`}
+                className='tools iconContainer'
                 ref={triggerRef}
                 onClick={() => {
-                  setFilterBackground(!filterBackground);
                   toggle();
-                  addEventListener();
                 }}>
                 <img
                   src={filterIcon}
@@ -175,14 +155,10 @@ function ToolBar(props) {
             }}>
             {({ triggerRef, toggle }) => (
               <div
-                className={`tools iconContainer ${
-                  searchBackground ? 'searchBackground' : ''
-                }`}
+                className='tools iconContainer'
                 ref={triggerRef}
                 onClick={() => {
-                  setSearchBackground(!searchBackground);
                   toggle();
-                  addEventListener();
                 }}>
                 <img
                   src={searchIcon}

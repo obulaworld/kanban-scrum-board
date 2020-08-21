@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ToggleLayer } from 'react-laag';
 import Card from '../Card/Card';
 import { Draggable } from 'react-beautiful-dnd';
@@ -17,8 +17,6 @@ function Stage(props) {
     cardOnclick,
     id,
   } = props;
-
-  const [ellipsisBackground, setEllipsisBackground] = useState(false);
 
   return (
     <div className='stage'>
@@ -62,12 +60,9 @@ function Stage(props) {
               }}>
               {({ triggerRef, toggle }) => (
                 <div
-                  className={`ellipsis iconContainer ${
-                    ellipsisBackground ? 'ellipsisBackground' : ''
-                  }`}
+                  className="ellipsis iconContainer"
                   ref={triggerRef}
                   onClick={() => {
-                    setEllipsisBackground(!ellipsisBackground);
                     toggle();
                   }}>
                   <span className='ellipsisContainer'>
@@ -98,8 +93,6 @@ function Stage(props) {
                         onClick={() => cardOnclick(card.id, id)}
                         key={index}
                         id={card.id}
-                        ellipsisBackground={ellipsisBackground}
-                        setEllipsisBackground={setEllipsisBackground}
                         snapshot={snapshot}
                         selectedIds={selectedIds}
                         title={card.title}

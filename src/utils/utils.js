@@ -10,7 +10,6 @@ export function array_move(arr, old_index, new_index) {
 }
 
 export function array_insert(arr, index, card) {
-  console.log('arr_insert', arr, index, card);
   arr.splice(index, 0, card);
   return arr;
 }
