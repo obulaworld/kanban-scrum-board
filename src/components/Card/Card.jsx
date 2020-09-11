@@ -29,8 +29,8 @@ function Card(props) {
         {shouldShowSelection ? (
           <span className='selectionCount'>{selectionCount}</span>
         ) : (
-          ''
-        )}
+            ''
+          )}
       </div>
       <p className='cardText'>{description}</p>
       <div className='iconContainer'>
@@ -48,8 +48,8 @@ function Card(props) {
             <span>{String(assignee).charAt(0).toUpperCase()}</span>
           </div>
         ) : (
-          ''
-        )}
+            ''
+          )}
       </div>
     </div>
   );

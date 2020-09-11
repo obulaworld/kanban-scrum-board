@@ -8,10 +8,6 @@ hr {
     margin-right: 0;
 }
 
-.cardIsMoving {
-  background: #ddd;
-}
-
 .Card {
   padding: 1.125rem 0.75rem;
   width: 18.4375rem;
@@ -21,6 +17,10 @@ hr {
   border-radius: 4px;
   margin-bottom: 1rem;
   position: relative;
+}
+
+.cardIsMoving {
+  background: #ddd;
 }
 
 .Card:focus {
