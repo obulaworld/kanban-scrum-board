@@ -8,6 +8,10 @@ hr {
     margin-right: 0;
 }
 
+.cardIsMoving {
+  background: #ddd;
+}
+
 .Card {
   padding: 1.125rem 0.75rem;
   width: 18.4375rem;

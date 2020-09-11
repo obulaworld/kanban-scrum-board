@@ -23,7 +23,7 @@ function Card(props) {
       onClick={onClick}
       className={`Card ${
         selectedIds.includes(id) ? 'cardFocused' : 'cardUnFocused'
-      }`}>
+        } ${snapshot.isDragging || selectedIds.includes(id) ? 'cardIsMoving' : ''}`}>
       <div className='cardHeader'>
         <h3 className='cardTitle'>{title}</h3>
         {shouldShowSelection ? (
